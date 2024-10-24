@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="free-icon-brand-7253182.png" type="image/x-icon" />
+    <title>DS Shoes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #c106f0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Скрытый блок для номера телефона */
+        #contact-number {
+            display: none;
+            background-color: #f08b06ea;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Главный контент */
+        .main-content {
+            display: block;
+        }
+
+        /* Слайдер */
+        .slider-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slider-buttons {
+            position: relative;
+            top: -200px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Скрытый блок для страницы продуктов */
+        .products-page {
+            display: none;
+            padding: 20px;
+        }
+
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-card h3 {
+            margin: 20px 0;
+        }
+
+        .product-card p {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <h1><B>Diamond Secret</B></h1>
+    </header>
+
+    <!-- Навигация -->
+    <nav>
+        <a href="javascript:void(0)" onclick="showMainContent()">Home</a>
+        <a href="javascript:void(0)" onclick="showProducts()">Products</a>
+        <a href="javascript:void(0)" onclick="toggleContact()">Contact</a>
+    </nav>
+
+    <!-- Номер телефона (скрыт до нажатия кнопки) -->
+    <div id="contact-number">
+        Телефон: +373 78 524 715
+    </div>
+
+    <!-- Главная страница -->
+    <div class="main-content">
+        <!-- Слайдер -->
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide">
+                    <img src="лого3.jpg" alt="Slider 1">
+                </div>
+                <div class="slide">
+                    <img src="" alt="Slider 2">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x400/7fff7f/333333?text=Slider+3" alt="Slider 3">
+                </div>
+            </div>
+            <div class="slider-buttons">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Страница продуктов -->
+    <div class="products-page">
+        <h1>Наши продукты</h1>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="p1.jpg" alt="Product 1">
+                <h3>Товар 1</h3>
+                <p>Цена: $10</p>
+            </div>
+            <div class="product-card">
+                <img src="p9.jpg" alt="Product 2">
+                <h3>Товар 2</h3>
+                <p>Цена: $20</p>
+            </div>
+            <div class="product-card">
+                <img src="p8.jpg" alt="Product 3">
+                <h3>Товар 3</h3>
+                <p>Цена: $30</p>
+            </div>
+            <div class="product-card">
+                <img src="p7.jpg" alt="Product 4">
+                <h3>Товар 4</h3>
+                <p>Цена: $40</p>
+            </div>
+            <div class="product-card">
+                <img src="p6.jpg" alt="Product 5">
+                <h3>Товар 5</h3>
+                <p>Цена: $50</p>
+            </div>
+            <div class="product-card">
+                <img src="p5.jpg" alt="Product 6">
+                <h3>Товар 6</h3>
+                <p>Цена: $60</p>
+            </div>
+            <div class="product-card">
+                <img src="p3.jpg" alt="Product 7">
+                <h3>Товар 7</h3>
+                <p>Цена: $70</p>
+            </div>
+            <div class="product-card">
+                <img src="p4.jpg" alt="Product 8">
+                <h3>Товар 8</h3>
+                <p>Цена: $80</p>
+            </div>
+            <div class="product-card">
+                <img src="p2.jpg" alt="Product 9">
+                <h3>Товар 9</h3>
+                <p>Цена: $90</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 DS Shoes Styled Website. All Rights Reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script>
+        // Функция переключения видимости номера телефона
+        function toggleContact() {
+            const contactNumber = document.getElementById('contact-number');
+            if (contactNumber.style.display === 'none') {
+                contactNumber.style.display = 'block';
+            } else {
+                contactNumber.style.display = 'none';
+            }
+        }
+
+        // Логика слайдера
+        let currentSlide = 0;
+
+        function moveSlide(direction) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            currentSlide += direction;
+
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Показ главной страницы и скрытие страницы продуктов
+        function showMainContent() {
+            document.querySelector('.main-content').style.display = 'block';
+            document.querySelector('.products-page').style.display = 'none';
+        }
+
+        // Показ страницы продуктов и скрытие главной страницы
+        function showProducts() {
+            document.querySelector('.main-content').style.display = 'none';
+            document.querySelector('.products-page').style.display = 'block';
+        }
+
+    </script>
+
+</body>
+</html>
